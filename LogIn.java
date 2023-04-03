@@ -13,28 +13,27 @@ public class LogIn {
 		
 	}
 
-@FXML
-public Button button;
-@FXML
-private Label wrongLogIn;
-@FXML
-private TextField username;
-@FXML
-private PasswordField password;
+	@FXML
+	public Button button;
+	@FXML
+	private Label wrongLogIn;
+	@FXML
+	private TextField username;
+	@FXML
+	private PasswordField password;
 
-public void userLogIn(ActionEvent event) throws IOException {
-	checkLogin();
-}
-private void checkLogin() throws IOException {
-	Main m = new Main();
-	if(username.getText().toString().equals("yjkim") && password.getText().toString().equals("1234")) {
-		wrongLogIn.setText("Success!");
-		m.changeScene("afterLogin.fxml");
-	} else if(username.getText().isEmpty() && password.getText().isEmpty()) {
-		wrongLogIn.setText("Please enter your data.");
-	} else {
-		wrongLogIn.setText("Wrong username or password!");
+	public void userLogIn(ActionEvent event) throws IOException {
+		checkLogin();
 	}
-}
-
+	private void checkLogin() throws IOException {
+		Main m = new Main();
+		if(username.getText().toString().equals("yjkim") && password.getText().toString().equals("1234")) {
+			wrongLogIn.setText("Success!");
+			m.changeScene("afterLogin.fxml");
+		} else if(username.getText().isEmpty() && password.getText().isEmpty()) {
+			wrongLogIn.setText("Please enter your data.");
+		} else {
+			wrongLogIn.setText("Wrong username or password!");
+		}
+	}
 }
